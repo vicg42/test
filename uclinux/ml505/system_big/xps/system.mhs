@@ -65,8 +65,8 @@
  PORT fpga_0_rst_1_sys_rst_pin = sys_rst_s, DIR = I, SIGIS = RST, RST_POLARITY = 0
  PORT xps_ps2_0_PS2_1_DATA_pin = xps_ps2_0_PS2_1_DATA_pin, DIR = IO
  PORT xps_ps2_0_PS2_1_CLK_pin = xps_ps2_0_PS2_1_CLK_pin, DIR = IO
-# PORT xps_ps2_0_PS2_2_DATA_pin = xps_ps2_0_PS2_2_DATA_pin, DIR = IO
-# PORT xps_ps2_0_PS2_2_CLK_pin = xps_ps2_0_PS2_2_CLK_pin, DIR = IO
+ PORT xps_ps2_1_PS2_1_DATA_pin = xps_ps2_1_PS2_1_DATA_pin, DIR = IO
+ PORT xps_ps2_1_PS2_1_CLK_pin = xps_ps2_1_PS2_1_CLK_pin, DIR = IO
  PORT xps_tft_0_TFT_VSYNC_pin = xps_tft_0_TFT_VSYNC_pin, DIR = O
  PORT xps_tft_0_TFT_HSYNC_pin = xps_tft_0_TFT_HSYNC_pin, DIR = O
  PORT xps_tft_0_TFT_DE_pin = xps_tft_0_TFT_DE_pin, DIR = O
@@ -168,7 +168,7 @@ END
 
 BEGIN xps_uartlite
  PARAMETER INSTANCE = RS232_Uart_1
- PARAMETER C_BAUDRATE = 9600
+ PARAMETER C_BAUDRATE = 115200
  PARAMETER C_DATA_BITS = 8
  PARAMETER C_USE_PARITY = 0
  PARAMETER C_ODD_PARITY = 0
@@ -425,7 +425,7 @@ BEGIN xps_intc
  PARAMETER C_BASEADDR = 0x81800000
  PARAMETER C_HIGHADDR = 0x8180ffff
  BUS_INTERFACE SPLB = mb_plb
- PORT Intr = RS232_Uart_1_Interrupt & Push_Buttons_5Bit_IP2INTC_Irpt & IIC_EEPROM_IIC2INTC_Irpt & Hard_Ethernet_MAC_TemacIntc0_Irpt & fpga_0_Hard_Ethernet_MAC_PHY_MII_INT_pin & SysACE_CompactFlash_SysACE_IRQ&xps_timer_0_Interrupt & DDR2_SDRAM_SDMA2_Rx_IntOut & DDR2_SDRAM_SDMA2_Tx_IntOut & xps_ps2_0_IP2INTC_Irpt_1
+ PORT Intr = RS232_Uart_1_Interrupt & Push_Buttons_5Bit_IP2INTC_Irpt & IIC_EEPROM_IIC2INTC_Irpt & Hard_Ethernet_MAC_TemacIntc0_Irpt & fpga_0_Hard_Ethernet_MAC_PHY_MII_INT_pin & SysACE_CompactFlash_SysACE_IRQ&xps_timer_0_Interrupt & DDR2_SDRAM_SDMA2_Rx_IntOut & DDR2_SDRAM_SDMA2_Tx_IntOut & xps_ps2_0_IP2INTC_Irpt_1 & xps_ps2_1_IP2INTC_Irpt_1
  PORT Irq = microblaze_0_Interrupt
 END
 
@@ -464,5 +464,16 @@ BEGIN xps_ps2
  PORT PS2_1_CLK = xps_ps2_0_PS2_1_CLK_pin
 END
 
-# PORT PS2_2_DATA = xps_ps2_0_PS2_2_DATA_pin
-# PORT PS2_2_CLK = xps_ps2_0_PS2_2_CLK_pin
+BEGIN xps_ps2
+ PARAMETER INSTANCE = xps_ps2_1
+ PARAMETER HW_VER = 1.01.b
+ PARAMETER C_BASEADDR = 0x86B00000
+ PARAMETER C_HIGHADDR = 0x86B0FFFF
+ PARAMETER C_SPLB_CLK_FREQ_HZ = 100000000
+ PARAMETER C_IS_DUAL = 0
+ BUS_INTERFACE SPLB = mb_plb
+ PORT IP2INTC_Irpt_1 = xps_ps2_1_IP2INTC_Irpt_1
+ PORT PS2_1_DATA = xps_ps2_1_PS2_1_DATA_pin
+ PORT PS2_1_CLK = xps_ps2_1_PS2_1_CLK_pin
+END
+
