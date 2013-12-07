@@ -35,12 +35,12 @@
 	model = "Xilinx MicroBlaze";
 	aliases {
 		ethernet0 = &hard_ethernet_mac;
-		display_tft0 = &xps_tft_0;
+		serial0 = &rs232_uart_1;
 	} ;
 	chosen {
-		bootargs = "console=tty0 root=/dev/ram ip=10.1.7.235:10.1.7.125:10.1.7.2:255.255.255.0:ml505_linux:eth0
+		bootargs = "console=ttyUL0 root=/dev/ram ip=10.1.7.235:10.1.7.125:10.1.7.2:255.255.255.0:ml505_linux:eth0
 		rw mtdparts=88000000.flash:4M(bits),5M(zImage),22M(rootfs),896k(unused),128k(loader)";
-		linux,stdout-path = "/plb@0/tft@a0000000";
+		linux,stdout-path = "/plb@0/serial@83e00000";
 	} ;
 	cpus {
 		#address-cells = <1>;
@@ -273,7 +273,7 @@
 				interrupt-parent = <&xps_intc_0>;
 				interrupts = < 8 2 >;
 				llink-connected = <&PIM2>;
-				local-mac-address = [ 00 0a 35 a6 c6 00 ];
+				local-mac-address = [ 00 0a 35 c8 2d 00 ];
 				reg = < 0x81c00000 0x40 >;
 				xlnx,avb = <0x0>;
 				xlnx,bus2core-clk-ratio = <0x1>;
@@ -415,7 +415,7 @@
 			xlnx,mplb-awidth = <0x20>;
 			xlnx,mplb-dwidth = <0x40>;
 			xlnx,mplb-native-dwidth = <0x40>;
-			xlnx,mplb-smallest-slave = <0x20>;
+			xlnx,mplb-smallest-slave = <0x40>;
 			xlnx,tft-interface = <0x1>;
 		} ;
 		xps_timer_0: timer@83c00000 {
