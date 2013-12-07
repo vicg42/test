@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          D:/Work/Linkos/test/uclinux/ml505/system_big/xps/pcores/test_led_v1_00_a/data/test_led_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Dec 05 13:11:59 2013 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib test_led_v1_00_a vicg_common_pkg vhdl
+lib test_led_v1_00_a fpga_test_01 vhdl
+lib test_led_v1_00_a time_gen vhdl
+lib test_led_v1_00_a test_led vhdl

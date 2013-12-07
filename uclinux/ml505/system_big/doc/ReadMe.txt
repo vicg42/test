@@ -25,6 +25,8 @@
  example :
  bootargs = "console=ttyUL0,115200 highres=on ip=dhcp root=/dev/nfs rw nfsroot=192.168.0.102:/tftpboot/rootnommu";
 
+ others info:
+ http://www.tldp.org/HOWTO/BootPrompt-HOWTO-3.html
 
 @ - linux команды:
   @) - Если в терминале выдается абра-кодабра, то можно набрать на клавиатуре reset и тогда шрифт должен востановиться
