@@ -35,12 +35,12 @@
 	model = "Xilinx MicroBlaze";
 	aliases {
 		ethernet0 = &hard_ethernet_mac;
-		serial0 = &rs232_uart_1;
+		display_tft0 = &xps_tft_0;
 	} ;
 	chosen {
-		bootargs = "console=ttyUL0 root=/dev/ram ip=10.1.7.235:10.1.7.125:10.1.7.2:255.255.255.0:ml505_linux:eth0
+		bootargs = "console=tty0 root=/dev/ram ip=10.1.7.235:10.1.7.125:10.1.7.2:255.255.255.0:ml505_linux:eth0
 		rw mtdparts=88000000.flash:4M(bits),5M(zImage),22M(rootfs),896k(unused),128k(loader)";
-		linux,stdout-path = "/plb@0/serial@83e00000";
+		linux,stdout-path = "/plb@0/tft@a0000000";
 	} ;
 	cpus {
 		#address-cells = <1>;
