@@ -39,8 +39,8 @@
 	} ;
 	chosen {
 		bootargs = "console=ttyUL0 root=/dev/ram ip=10.1.7.250:10.1.7.125:10.1.7.2:255.255.255.0:ml505_linux:eth0
-		rw mtdparts=88000000.flash:4M(bits),5M(zImage),22M(rootfs),896k(unused),128k(loader)";
-		linux,stdout-path = "/plb@0/serial@83e00000";
+		rw mtdparts=82000000.flash:4M(bits),5M(zImage),22M(rootfs),896k(unused),128k(loader)";
+		linux,stdout-path = "/plb@0/serial@81401000";
 	} ;
 	cpus {
 		#address-cells = <1>;
