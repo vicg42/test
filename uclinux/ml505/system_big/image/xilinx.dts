@@ -38,7 +38,7 @@
 		serial0 = &rs232_uart_1;
 	} ;
 	chosen {
-		bootargs = "console=ttyUL0 root=/dev/nfs rw nfsroot=10.1.7.235:/home/user/work/nfs,port=2049 ip=10.1.7.250:10.1.7.235:10.1.7.2:255.255.255.0:ml505_linux:eth0:off
+		bootargs = "console=ttyUL0 root=/dev/ram ip=10.1.7.250:10.1.7.235:10.1.7.2:255.255.255.0:ml505:eth0:off
 		rw mtdparts=82000000.flash:4M(bits),10M(zImage),17M(rootfs),896k(unused),128k(loader)";
 		linux,stdout-path = "/plb@0/serial@81401000";
 	} ;
