@@ -103,3 +103,8 @@
       Be careful as the ethernet MAC address is in the EEPROM and can be overwritten.
 
       bash>echo 0123456789DEADBEEFCAFE > /sys/bus/i2c/devices/0-0050/eeprom
+
+
+@ U-BOOT
+  1) download  http://www.wiki.xilinx.com/file/view/uboot_bsp.tar.gz/421818190/uboot_bsp.tar.gz
+  2)
