@@ -1,4 +1,48 @@
-﻿@ -  XILINX.dts
+﻿@ Как собрать образ linux.
+  1. создать проект в среде Xilinx XPS
+  2. экспортировать прокет Xilinx XPS ->  Xilinx SDK. в каталог ../test/uclinux/ml505/system_big/sdk/
+  3. device-tree
+     1) git clone https://github.com/Xilinx/device-tree.git
+     2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
+  4. U-BOOT
+     1) download  http://www.wiki.xilinx.com/file/view/uboot_bsp.tar.gz/421818190/uboot_bsp.tar.gz
+     2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
+  5. В среде Xilinx SDK /File/New/Board Support Package
+     для linux (device-tree) + для u-boot
+
+  6. Запустить виртуальную машину.
+  7. cd ~/work/uclinux/xilinx/too/linux-xil
+  8. установить переменную CROSS_COMPILE:
+     > export CROSS_COMPILE=~/work/..path../microblaze-gnu/binsries/lin64-microblaze-unknow-linux-gnu_xxx/bin/microbalze-unknow-linux-gnu-
+
+    (plb bus) microblaze littel endian: lin64-microblazeel-unknow-linux-...
+    (axi bus) microblaze big endian: lin64-microblaze-unknow-linux-...
+
+  9. скопировать PC(work) -> VirtuabBox:
+     d:\Work\Linkos\test\uclinux\ml505\system_big\image\.config  -> ~/work/uclinux/tool/linux-xlnx
+     d:\Work\Linkos\test\uclinux\ml505\system_big\image\xilinx.dts  -> ~/work/uclinux/tool/linux-xlnx/arch/microblaze/boot/dts
+
+  10. Linux Kernel compile
+     1. cd ~/work/uclinux/xilinx/tool/linux-xlnx
+     2. make ARCH=microblaze simpleImage.xilinx или make ARCH=microblaze menuconfig (для настройки ядра linux)
+
+  11. скопировать VirtuabBox -> PC(work):
+     ~/work/uclinux/tool/linux-xlnx/arch/microblaze/boot/simpleImage.xilinx -> d:\Work\Linkos\test\uclinux\ml505\system_big\image
+
+  12. Xilinx SDK: Xilinx Tools/Program FPGA (bootloader)
+
+  13. Xilinx SDK: Xilinx Tools/XDM console
+
+  14. Запустить программу терминал (нпр. Tera Term (Serial Port: 115200))
+
+  15. XDM% connect mb
+  16. XDM% dow d:/Work/Linkos/test/uclinux/ml505/system_big/image/simpleImage.xilinx.unstrip
+  17. XDM% run (для запуска загрузки linux)
+  18. XDM% stop (для остановки microblaze)
+
+
+
+@ -  XILINX.dts
   @) аргуманы строки bootargs (http://www.monstr.eu/wiki/doku.php?id=fdt:fdt)
  ------------------------------------------------------------------------------------------------------------------
 |Rootfs on SystemACE                  | root=/dev/xsa2                                                             |
@@ -41,9 +85,7 @@
 
   @) df -h  --вывод информации о свободном/занятом месте на дисках
 
-@ device-tree
-  1) git clone https://github.com/Xilinx/device-tree.git
-  2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
+
 
 @ - linux dev
 
@@ -108,6 +150,3 @@
       bash>echo 0123456789DEADBEEFCAFE > /sys/bus/i2c/devices/0-0050/eeprom
 
 
-@ U-BOOT
-  1) download  http://www.wiki.xilinx.com/file/view/uboot_bsp.tar.gz/421818190/uboot_bsp.tar.gz
-  2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
