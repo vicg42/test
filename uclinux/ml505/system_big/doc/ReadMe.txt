@@ -41,6 +41,9 @@
 
   @) df -h  --вывод информации о свободном/занятом месте на дисках
 
+@ device-tree
+  1) git clone https://github.com/Xilinx/device-tree.git
+  2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
 
 @ - linux dev
 
@@ -107,4 +110,4 @@
 
 @ U-BOOT
   1) download  http://www.wiki.xilinx.com/file/view/uboot_bsp.tar.gz/421818190/uboot_bsp.tar.gz
-  2)
+  2) copy to ../test/uclinux/ml505/system_big/sdk/xilinx_bsp
