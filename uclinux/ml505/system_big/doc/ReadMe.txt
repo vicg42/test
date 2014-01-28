@@ -1,4 +1,6 @@
-﻿@ Как собрать образ linux.
+﻿##########################
+# Как собрать образ linux.
+##########################
   1. создать проект в среде Xilinx XPS
   2. экспортировать прокет Xilinx XPS ->  Xilinx SDK. в каталог ../test/uclinux/ml505/system_big/sdk/
   3. device-tree
@@ -11,7 +13,7 @@
      для linux (device-tree) + для u-boot
 
   6. Запустить виртуальную машину.
-  7. cd ~/work/uclinux/xilinx/too/linux-xil
+  7. cd ~/work/uclinux/xilinx/too/linux-xlnx
   8. установить переменную CROSS_COMPILE:
      > export CROSS_COMPILE=~/work/..path../microblaze-gnu/binsries/lin64-microblaze-unknow-linux-gnu_xxx/bin/microbalze-unknow-linux-gnu-
 
@@ -40,9 +42,30 @@
   17. XDM% run (для запуска загрузки linux)
   18. XDM% stop (для остановки microblaze)
 
+##########################
+# Linux users:
+##########################
+  root (password: linkos)
+  user (password: linkos)
 
+##########################
+# MTD - работа с flash
+##########################
+  >войти в систему под root
+  > cat /proc/mtd  (просмотр на какие разделы разбита flash)
+  MTD commands:
+  > flash_eraseall /dev/mtd0 (стирание соотв. раздела)
 
-@ -  XILINX.dts
+##########################
+# Подключение сетевых шар:
+##########################
+  samba:
+  > mkdir -p /mnt/smb
+  > mount -t cifs //10.1.7.125/Change -o username=guest /mnt/smb
+
+##########################
+# XILINX.dts
+##########################
   @) аргуманы строки bootargs (http://www.monstr.eu/wiki/doku.php?id=fdt:fdt)
  ------------------------------------------------------------------------------------------------------------------
 |Rootfs on SystemACE                  | root=/dev/xsa2                                                             |
@@ -72,7 +95,9 @@
  others info:
  http://www.tldp.org/HOWTO/BootPrompt-HOWTO-3.html
 
-@ - linux команды:
+##########################
+# linux команды:
+##########################
   @) - Если в терминале выдается абра-кодабра, то можно набрать на клавиатуре reset и тогда шрифт должен востановиться
 
   @) делаем файл(ы) исполняемым:
@@ -87,7 +112,9 @@
 
 
 
-@ - linux dev
+##########################
+# linux dev
+##########################
 
   @) i2c - EEPROM
     *) I2C EEPROM Driver Kernel Configuration:
