@@ -32,7 +32,7 @@
 	#address-cells = <1>;
 	#size-cells = <1>;
 	compatible = "xlnx,microblaze";
-	model = "Xilinx MicroBlaze";
+	model = "testing";
 	aliases {
 		ethernet0 = &hard_ethernet_mac;
 		serial0 = &rs232_uart_1;
@@ -110,6 +110,12 @@
 			xlnx,ill-opcode-exception = <0x1>;
 			xlnx,instance = "microblaze_0";
 			xlnx,interconnect = <0x1>;
+			xlnx,interconnect-m-axi-dc-read-issuing = <0x2>;
+			xlnx,interconnect-m-axi-dc-write-issuing = <0x20>;
+			xlnx,interconnect-m-axi-dp-read-issuing = <0x1>;
+			xlnx,interconnect-m-axi-dp-write-issuing = <0x1>;
+			xlnx,interconnect-m-axi-ic-read-issuing = <0x2>;
+			xlnx,interconnect-m-axi-ip-read-issuing = <0x1>;
 			xlnx,interrupt-is-edge = <0x0>;
 			xlnx,lockstep-slave = <0x0>;
 			xlnx,mmu-dtlb-size = <0x4>;
