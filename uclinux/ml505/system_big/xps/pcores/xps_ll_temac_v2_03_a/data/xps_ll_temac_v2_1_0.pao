@@ -1,0 +1,176 @@
+################################################################################
+##
+## Copyright (c) 1995-2002 Xilinx, Inc.  All rights reserved.  Xilinx, Inc.
+##
+## plb_temac.pao
+##
+## Peripheral Analyze Order
+##
+################################################################################
+#
+#
+#
+#-----  PROCESSOR COMMON LIBRARY COMPONENTS  ----------------------------------
+#
+lib proc_common_v3_00_a all 
+#
+# --- PLBv46 Slave Single library ----------------------------------------------------
+#
+lib plbv46_slave_single_v1_01_a all 
+#
+# --- Soft TEMAC library -----------------------------------------------------
+#
+lib soft_temac_wrap_v2_03_a all  
+#
+# --- Ethernet Statistics library -----------------------------------------------------
+#
+lib eth_stat_wrap_v2_03_a all  
+#
+#-----  XPS LL TEMAC COMPONENTS  ------------------------------------------------
+#
+lib xps_ll_temac_v2_03_a  addr_response_shim.vhd vhdl
+lib xps_ll_temac_v2_03_a  rx_cl_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  rx_csum_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  rx_vlan_ll_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  rx_ll_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  rx_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_csum_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_csum_top_wrapper.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_vlan_support.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_ll_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_temac_if_sm.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_csum_mux.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_data_mux.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_cl_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_temac_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  tx_llink_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_cr.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_ie.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_ifgp.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_ip.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_is.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_tp.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_32b.vhd   vhdl
+lib xps_ll_temac_v2_03_a  reg_16bl.vhd   vhdl
+lib xps_ll_temac_v2_03_a  registers.vhd   vhdl
+lib xps_ll_temac_v2_03_a  dcr2ghi.vhd   vhdl			    
+lib xps_ll_temac_v2_03_a  v4_gt11_init_rx.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_gt11_init_tx.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_cal_block_v1_4_1.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_gt11_to_gt_rxclkcorcnt_shim.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_gmii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_mii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_rgmii13_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_rgmii2_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_rx_elastic_buffer.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_1000basex_gt11_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_sgmii_gt11_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_1000basex.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_gmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_gmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_mii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_mii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_rgmii2.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_rgmii2_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_rgmii13.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_rgmii13_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_sgmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_dual_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_1000basex_gt11_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_sgmii_gt11_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_1000basex.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_gmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_gmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_mii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_mii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_rgmii2.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_rgmii2_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_rgmii13.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_rgmii13_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_sgmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_single_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v4_temac_wrap.vhd   vhdl			    
+lib xps_ll_temac_v2_03_a  v5_gmii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_mii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_rgmii13_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_rgmii2_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_rocketio_wrapper_gtp_tile.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_rocketio_wrapper_gtp.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_1000basex_rocketio_wrapper_gtx_tile.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_1000basex_rocketio_wrapper_gtx.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii_rocketio_wrapper_gtx_tile.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii_rocketio_wrapper_gtx.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii_rocketio_wrapper_gtx_tile.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii_rocketio_wrapper_gtx.vhd vhdl
+lib xps_ll_temac_v2_03_a  v5_rx_elastic_buffer.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5fxt_rx_elastic_buffer.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_1000basex_gtp_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_1000basex_gtx_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii_gtp_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii_gtx_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_1000basex.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5fxt_dual_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_gmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_gmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_mii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_mii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_rgmii2.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_rgmii2_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_rgmii13.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_rgmii13_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_dual_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5fxt_dual_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_1000basex_gtp_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_1000basex_gtx_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii_gtp_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii_gtx_dual_1000X.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_1000basex.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5fxt_single_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_gmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_gmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_mii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_mii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_rgmii2.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_rgmii2_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_rgmii13.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_rgmii13_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_single_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5fxt_single_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v5_temac_wrap.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rx_elastic_buffer.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_1000basex.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_1000basex_rocketio_wrapper_gtx.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_1000basex_rocketio_wrapper.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_1000basex_rocketio_wrapper_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_1000basex_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_sgmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_sgmii_rocketio_wrapper_gtx.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_sgmii_rocketio_wrapper.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_sgmii_rocketio_wrapper_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_sgmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_gmii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_fcs_blk_gmii.vhd vhdl
+lib xps_ll_temac_v2_03_a  v6_mii_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_fcs_blk_mii.vhd vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii13_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii2_if.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_fcs_blk_rgmii.vhd vhdl
+lib xps_ll_temac_v2_03_a  v6_gmii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_gmii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_mii.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_mii_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii2.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii2_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii13.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_rgmii13_top.vhd   vhdl
+lib xps_ll_temac_v2_03_a  v6_temac_wrap.vhd   vhdl
+lib xps_ll_temac_v2_03_a  plb2ghi.vhd   vhdl
+lib xps_ll_temac_v2_03_a  xps_ll_temac.vhd   vhdl
+#
+# --- End of list ------------------------------

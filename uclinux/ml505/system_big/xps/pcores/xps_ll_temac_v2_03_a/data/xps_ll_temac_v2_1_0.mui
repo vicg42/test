@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+########################################################################
+##
+## Copyright (c) 2005 Xilinx, Inc.  All rights reserved.
+##
+########################################################################
+-->
+
+<!DOCTYPE doc SYSTEM "../../ipdialog.dtd" [
+<!ENTITY C_NUM_IDELAYCTRL ' 
+<widget id="C_NUM_IDELAYCTRL">
+	<key>C_NUM_IDELAYCTRL</key>
+	<label>C_NUM_IDELAYCTRL</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_IDELAYCTRL_LOC ' 
+<widget id="C_IDELAYCTRL_LOC">
+	<key>C_IDELAYCTRL_LOC</key>
+	<label>C_IDELAYCTRL_LOC</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_RESERVED ' 
+<widget id="C_RESERVED">
+	<key>C_RESERVED</key>
+	<label>C_RESERVED</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_FAMILY ' 
+<widget id="C_FAMILY">
+	<key>C_FAMILY</key>
+	<label>C_FAMILY</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_BUS2CORE_CLK_RATIO ' 
+<widget id="C_BUS2CORE_CLK_RATIO">
+	<key>C_BUS2CORE_CLK_RATIO</key>
+	<label>Ratio of PLB Bus Clock to Core Clock</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC_TYPE ' 
+<widget id="C_TEMAC_TYPE">
+	<key>C_TEMAC_TYPE</key>
+	<label>Type of TEMAC</label>
+	<tip></tip>
+    <tclProc>xps_update_phy_type</tclProc>
+</widget>
+'>
+<!ENTITY C_INCLUDE_IO ' 
+<widget id="C_INCLUDE_IO">
+	<key>C_INCLUDE_IO</key>
+	<label>Include IO and BUFG as Needed for the PHY Interface Selected</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_PHY_TYPE ' 
+<widget id="C_PHY_TYPE">
+	<key>C_PHY_TYPE</key>
+	<label>Physical Interface Type</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_ENABLED ' 
+<widget id="C_TEMAC1_ENABLED">
+	<key>C_TEMAC1_ENABLED</key>
+	<label>Enable TEMAC 1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_PHYADDR ' 
+<widget id="C_TEMAC0_PHYADDR">
+	<key>C_TEMAC0_PHYADDR</key>
+	<label>PHY Address for TEMAC 0</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_PHYADDR ' 
+<widget id="C_TEMAC1_PHYADDR">
+	<key>C_TEMAC1_PHYADDR</key>
+	<label>PHY Address for TEMAC 1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_TXFIFO ' 
+<widget id="C_TEMAC0_TXFIFO">
+	<key>C_TEMAC0_TXFIFO</key>
+	<label>TX FIFO Depth of TEMAC0</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_RXFIFO ' 
+<widget id="C_TEMAC0_RXFIFO">
+	<key>C_TEMAC0_RXFIFO</key>
+	<label>RX FIFO Depth of TEMAC0</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_TXFIFO ' 
+<widget id="C_TEMAC1_TXFIFO">
+	<key>C_TEMAC1_TXFIFO</key>
+	<label>TX FIFO Depth of TEMAC1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_RXFIFO ' 
+<widget id="C_TEMAC1_RXFIFO">
+	<key>C_TEMAC1_RXFIFO</key>
+	<label>RX FIFO Depth of TEMAC1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_TXCSUM ' 
+<widget id="C_TEMAC0_TXCSUM">
+	<key>C_TEMAC0_TXCSUM</key>
+	<label>Enable TX Checksum Offload for TEMAC0</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_RXCSUM ' 
+<widget id="C_TEMAC0_RXCSUM">
+	<key>C_TEMAC0_RXCSUM</key>
+	<label>Enable RX Checksum Offload for TEMAC0</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_TXCSUM ' 
+<widget id="C_TEMAC1_TXCSUM">
+	<key>C_TEMAC1_TXCSUM</key>
+	<label>Enable TX Checksum Offload for TEMAC1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_RXCSUM ' 
+<widget id="C_TEMAC1_RXCSUM">
+	<key>C_TEMAC1_RXCSUM</key>
+	<label>Enable RX Checksum Offload for TEMAC1</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_AVB ' 
+<widget id="C_TEMAC0_AVB">
+	<key>C_TEMAC0_AVB</key>
+	<label>C_TEMAC0_AVB</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_MCAST_EXTEND ' 
+<widget id="C_TEMAC0_MCAST_EXTEND">
+	<key>C_TEMAC0_MCAST_EXTEND</key>
+	<label>C_TEMAC0_MCAST_EXTEND</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_RXVLAN_STRP ' 
+<widget id="C_TEMAC0_RXVLAN_STRP">
+	<key>C_TEMAC0_RXVLAN_STRP</key>
+	<label>C_TEMAC0_RXVLAN_STRP</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_RXVLAN_TAG ' 
+<widget id="C_TEMAC0_RXVLAN_TAG">
+	<key>C_TEMAC0_RXVLAN_TAG</key>
+	<label>C_TEMAC0_RXVLAN_TAG</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_RXVLAN_TRAN ' 
+<widget id="C_TEMAC0_RXVLAN_TRAN">
+	<key>C_TEMAC0_RXVLAN_TRAN</key>
+	<label>C_TEMAC0_RXVLAN_TRAN</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_STATS ' 
+<widget id="C_TEMAC0_STATS">
+	<key>C_TEMAC0_STATS</key>
+	<label>C_TEMAC0_STATS</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_TXVLAN_STRP ' 
+<widget id="C_TEMAC0_TXVLAN_STRP">
+	<key>C_TEMAC0_TXVLAN_STRP</key>
+	<label>C_TEMAC0_TXVLAN_STRP</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_TXVLAN_TAG ' 
+<widget id="C_TEMAC0_TXVLAN_TAG">
+	<key>C_TEMAC0_TXVLAN_TAG</key>
+	<label>C_TEMAC0_TXVLAN_TAG</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC0_TXVLAN_TRAN ' 
+<widget id="C_TEMAC0_TXVLAN_TRAN">
+	<key>C_TEMAC0_TXVLAN_TRAN</key>
+	<label>C_TEMAC0_TXVLAN_TRAN</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_AVB ' 
+<widget id="C_TEMAC1_AVB">
+	<key>C_TEMAC1_AVB</key>
+	<label>C_TEMAC1_AVB</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_MCAST_EXTEND ' 
+<widget id="C_TEMAC1_MCAST_EXTEND">
+	<key>C_TEMAC1_MCAST_EXTEND</key>
+	<label>C_TEMAC1_MCAST_EXTEND</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_RXVLAN_STRP ' 
+<widget id="C_TEMAC1_RXVLAN_STRP">
+	<key>C_TEMAC1_RXVLAN_STRP</key>
+	<label>C_TEMAC1_RXVLAN_STRP</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_RXVLAN_TAG ' 
+<widget id="C_TEMAC1_RXVLAN_TAG">
+	<key>C_TEMAC1_RXVLAN_TAG</key>
+	<label>C_TEMAC1_RXVLAN_TAG</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_RXVLAN_TRAN ' 
+<widget id="C_TEMAC1_RXVLAN_TRAN">
+	<key>C_TEMAC1_RXVLAN_TRAN</key>
+	<label>C_TEMAC1_RXVLAN_TRAN</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_STATS ' 
+<widget id="C_TEMAC1_STATS">
+	<key>C_TEMAC1_STATS</key>
+	<label>C_TEMAC1_STATS</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_TXVLAN_STRP ' 
+<widget id="C_TEMAC1_TXVLAN_STRP">
+	<key>C_TEMAC1_TXVLAN_STRP</key>
+	<label>C_TEMAC1_TXVLAN_STRP</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_TXVLAN_TAG ' 
+<widget id="C_TEMAC1_TXVLAN_TAG">
+	<key>C_TEMAC1_TXVLAN_TAG</key>
+	<label>C_TEMAC1_TXVLAN_TAG</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_TEMAC1_TXVLAN_TRAN ' 
+<widget id="C_TEMAC1_TXVLAN_TRAN">
+	<key>C_TEMAC1_TXVLAN_TRAN</key>
+	<label>C_TEMAC1_TXVLAN_TRAN</label>
+	<tip></tip>
+</widget>
+'>
+<!ENTITY C_SIMULATION ' 
+<widget id="C_SIMULATION">
+	<key>C_SIMULATION</key>
+	<label>C_SIMULATION</label>
+	<tip></tip>
+</widget>
+'>
+]>
+
+<doc>
+	<view id="User">
+		<display>User</display>
+		<group id="All">
+			<display>All</display>
+			<item>&C_NUM_IDELAYCTRL;</item>
+			<item>&C_IDELAYCTRL_LOC;</item>
+			<item>&C_TEMAC_TYPE;</item>
+			<item>&C_INCLUDE_IO;</item>
+			<item>&C_PHY_TYPE;</item>
+			<item>&C_BUS2CORE_CLK_RATIO;</item>
+			<item>&C_TEMAC0_PHYADDR;</item>
+			<item>&C_TEMAC0_TXFIFO;</item>
+			<item>&C_TEMAC0_TXCSUM;</item>
+			<item>&C_TEMAC0_RXFIFO;</item>
+			<item>&C_TEMAC0_RXCSUM;</item>
+			<item>&C_TEMAC1_ENABLED;</item>
+            <item>&C_TEMAC0_AVB;</item>
+            <item>&C_TEMAC0_MCAST_EXTEND;</item>
+            <item>&C_TEMAC0_RXVLAN_STRP;</item>
+            <item>&C_TEMAC0_RXVLAN_TAG;</item>
+            <item>&C_TEMAC0_RXVLAN_TRAN;</item>
+            <item>&C_TEMAC0_STATS;</item>
+            <item>&C_TEMAC0_TXVLAN_STRP;</item>
+            <item>&C_TEMAC0_TXVLAN_TAG;</item>
+            <item>&C_TEMAC0_TXVLAN_TRAN;</item>
+			<item>&C_TEMAC1_PHYADDR;</item>
+			<item>&C_TEMAC1_TXFIFO;</item>
+			<item>&C_TEMAC1_TXCSUM;</item>
+			<item>&C_TEMAC1_RXFIFO;</item>
+			<item>&C_TEMAC1_RXCSUM;</item>
+            <item>&C_TEMAC1_AVB;</item>
+            <item>&C_TEMAC1_MCAST_EXTEND;</item>
+            <item>&C_TEMAC1_RXVLAN_STRP;</item>
+            <item>&C_TEMAC1_RXVLAN_TAG;</item>
+            <item>&C_TEMAC1_RXVLAN_TRAN;</item>
+            <item>&C_TEMAC1_STATS;</item>
+            <item>&C_TEMAC1_TXVLAN_STRP;</item>
+            <item>&C_TEMAC1_TXVLAN_TAG;</item>
+            <item>&C_TEMAC1_TXVLAN_TRAN;</item>
+            <item>&C_SIMULATION;</item>
+		</group>
+	</view>
+	<view id="System">
+		<display>System</display>
+		<group id="Addresses">
+			<display>Addresses</display>
+			<item>&C_BASEADDR;</item>
+			<item>&C_HIGHADDR;</item>
+		</group>
+		<group id="PLB">
+			<display>PLB</display>
+			<item>&C_SPLB_DWIDTH;</item>
+			<item>&C_SPLB_AWIDTH;</item>
+			<item>&C_SPLB_P2P;</item>
+			<item>&C_SPLB_MID_WIDTH;</item>
+			<item>&C_SPLB_NATIVE_DWIDTH;</item>
+			<item>&C_SPLB_NUM_MASTERS;</item>
+		</group>
+		<group id="Hidden">
+			<display>Hidden</display>
+			<item>&C_FAMILY;</item>
+			<item>&C_SUBFAMILY;</item>
+			<item>&C_RESERVED;</item>
+		</group>
+	</view>
+        <view id="Wizard">
+                <display>Wizard</display>
+                <group id="All">
+                        <display>All</display>
+                        <item>&G_USE_INTERRUPT;</item>
+                        <item>&G_USE_DMA;</item>
+                </group>
+        </view>
+</doc>
